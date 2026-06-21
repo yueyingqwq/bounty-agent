@@ -1,0 +1,23 @@
+{
+  "name": "Bounty Agent",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb",
+    "storage": "16gb"
+  },
+  "updateContentCommand": "npm install && npm run build",
+  "postCreateCommand": "cp config.example.json config.json && echo 'OPENAI_API_KEY='$OPENAI_API_KEY > .env && echo 'GITHUB_TOKEN='$GITHUB_TOKEN >> .env && echo 'GITHUB_USERNAME='$GITHUB_USERNAME >> .env && npm start",
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}

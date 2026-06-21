@@ -1,10 +1,11 @@
 {
-  "github_token": "ghp_your_token_here",
+  "github_token": "your_token",
   "github_username": "your_username",
+  "openai_api_key": "sk-your-key-here",
+  "openai_model": "gpt-4o",
   "data_dir": "./data",
-  "max_retries": 3,
-  "min_score_threshold": 70,
+  "min_score_threshold": 55,
   "scan_interval_ms": 600000,
-  "max_concurrent_tasks": 3,
+  "max_concurrent_tasks": 1,
   "computer_use_enabled": false
 }
