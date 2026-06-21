@@ -1,0 +1,10 @@
+{
+  "github_token": "ghp_your_token_here",
+  "github_username": "your_username",
+  "data_dir": "./data",
+  "max_retries": 3,
+  "min_score_threshold": 70,
+  "scan_interval_ms": 600000,
+  "max_concurrent_tasks": 3,
+  "computer_use_enabled": false
+}
