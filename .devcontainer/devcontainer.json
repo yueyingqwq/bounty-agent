@@ -7,7 +7,8 @@
     "storage": "16gb"
   },
   "updateContentCommand": "npm install && npm run build",
-  "postCreateCommand": "cp config.example.json config.json && echo 'OPENAI_API_KEY='$OPENAI_API_KEY > .env && echo 'GITHUB_TOKEN='$GITHUB_TOKEN >> .env && echo 'GITHUB_USERNAME='$GITHUB_USERNAME >> .env && npm start",
+  "postCreateCommand": "node -e 'const fs=require(\"fs\");fs.writeFileSync(\"config.json\",JSON.stringify({github_token:process.env.GH_TOKEN,github_username:process.env.GH_USER,openai_api_key:process.env.OPENAI_KEY,openai_model:\"gpt-4o\",data_dir:\"./data\",min_score_threshold:55,scan_interval_ms:600000,max_concurrent_tasks:1,computer_use_enabled:false},null,2))' && nohup node dist/index.js > agent.log 2>&1 &",
+  "postAttachCommand": "tail -f agent.log",
   "customizations": {
     "codespaces": {
       "openFiles": [
